@@ -286,7 +286,7 @@ class DQN(OffPolicyRLModel):
                 if len(episode_rewards[-101:-1]) == 0:
                     mean_100ep_reward = -np.inf
                 else:
-                    mean_100ep_reward = round(float(np.mean(episode_rewards[-101:-1])), 1)
+                    mean_100ep_reward = round(float(np.mean(episode_rewards[-101:-1])), 3)
 
                 num_episodes = len(episode_rewards)
                 if self.verbose >= 1 and done and log_interval is not None and len(episode_rewards) % log_interval == 0:
